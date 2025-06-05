@@ -1,49 +1,79 @@
-*{
-    margin: 0;
-    padding: 0;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.fundo{
-    background-image: linear-gradient(0deg,rgb(1, 15, 85),rgb(0, 85, 255));
-    height: 100vh;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+/* Fundo e centralização */
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.calculadora{
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 15px;
-    padding: 15px;
+.fundo {
+  background-image: linear-gradient(0deg, rgb(1, 15, 85), rgb(0, 85, 255));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-.botão{
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    cursor: pointer;
-    margin: 3px;
-    background-color: rgb(31,31,31);
-    border: none;
-    color: white;
+/* Calculadora centralizada */
+.calculadora {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 15px;
+  display: inline-block;
 }
 
-.botão:hover{
-    background-color: black;
+/* Visor */
+#resultado {
+  width: 210px;
+  background-color: white;
+  height: 40px;
+  margin: 5px 0 10px;
+  font-size: 25px;
+  color: black;
+  text-align: right;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
-#resultado{
-    width: 207px;
-    background-color: white;
-    height: 30px;
-    margin: 5px;
-    font-size: 25px;
-    color: black;
-    text-align: right;
-    padding: 5px;
+/* Botões */
+.botao {
+  background-color: rgb(31, 31, 31);
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  color: white;
+  border: none;
+  margin: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.botao:hover {
+  background-color: black;
+}
+
+/* Media Query: Ajustes para telas menores */
+@media (max-width: 400px) {
+  .calculadora {
+    padding: 10px;
+  }
+
+  #resultado {
+    width: 100%;
+    font-size: 20px;
+    height: 35px;
+  }
+
+  .botao {
+    width: 20vw;
+    height: 20vw;
+    font-size: 18px;
+    margin: 2px;
+  }
 }
